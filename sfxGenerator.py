@@ -49,10 +49,10 @@ if __name__ == "__main__":
 
     # Example prompts
     prompts = [
-        "a sharp metallic clang in a cave",
-        "footsteps on snow, crisp and isolated",
+        "loud banging metal syllables",
+        "a dog barking",
         "a sci-fi energy pulse charging up",
-        "a cartoon boing spring sound",
+        "a cartoon voice saying 'What did I just watch?'",
     ]
 
     for p in prompts:
