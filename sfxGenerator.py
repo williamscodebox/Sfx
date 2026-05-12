@@ -2,6 +2,8 @@ import torch
 from diffusers import StableAudioPipeline
 from pathlib import Path
 import datetime
+import soundfile as sf
+
 
 class SoundEffectGenerator:
     def __init__(self, model_id="stabilityai/stable-audio-open-1.0", device=None):
@@ -34,7 +36,9 @@ class SoundEffectGenerator:
             guidance_scale=3.5
         ).audios[0]
 
-        self.pipe.save_audio(audio, filename)
+        audio_np = audio.cpu().float().numpy().T
+        sf.write(filename, audio_np, 44100)
+
         print(f"[SFX] Saved: {filename}")
 
         return filename
